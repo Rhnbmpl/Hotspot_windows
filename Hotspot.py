@@ -1,7 +1,7 @@
 import subprocess
 user=input('Enter SSID : ')
 key=input('Enter Key : ')
-stri='netsh wlan set hostednetwork ode=allow ssid=%s key=%s'%(user,key)
+stri='netsh wlan set hostednetwork mode=allow ssid=%s key=%s'%(user,key)
 net=subprocess.Popen(stri,shell=False,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
 output,errors=net.communicate()
 if errors:
